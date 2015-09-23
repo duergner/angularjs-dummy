@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="io.duergner.angular-dummy">
+<head>
+    <meta charset="UTF-8">
+    <title>AngularJS Dummy</title>
+</head>
+<body ng-controller="InvitationController">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <table>
+                    <tr ng-repeat="invitation in invitations">
+                        <td ng-bind="invitation.id"></td>
+                        <td ng-bind="invitation.email"></td>
+                        <td>
+                            <button class="btn btn-default" ng-click="resend(invitation)" ng-show="undefined === invitation.claimed && null === invitation.claimed"><i class="fa fa-envelope"></i> </button>
+                            <span ng-bind="invitation.claimed | date:'shortDate'"></span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
